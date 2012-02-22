@@ -1,10 +1,10 @@
-%bcond_without bootstrap
+%bcond_with bootstrap
 %global packname  lavaan
 %global rlibdir  %{_datadir}/R/library
 
 Name:             R-%{packname}
 Version:          0.4_12
-Release:          1
+Release:          2
 Summary:          Latent Variable Analysis
 Group:            Sciences/Mathematics
 License:          GPL (>= 2)
