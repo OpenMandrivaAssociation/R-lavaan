@@ -12,19 +12,14 @@ URL:              http://cran.r-project.org/web/packages/%{packname}/index.html
 Source0:          http://cran.r-project.org/src/contrib/%{packname}_0.4-12.tar.gz
 BuildArch:        noarch
 Requires:         R-core
-Requires:         R-methods 
-Requires:         R-stats4 R-stats R-graphics 
-%if %{with bootstrap}
-Requires:         R-quadprog R-boot 
-%else
-Requires:         R-psych R-qgraph R-quadprog R-boot 
+Requires:         R-methods R-stats4 R-stats R-graphics R-quadprog R-boot
+%if %{without bootstrap}
+Requires:         R-psych R-qgraph
 %endif
-BuildRequires:    R-devel Rmath-devel texlive-collection-latex R-methods
-BuildRequires:    R-stats4 R-stats R-graphics 
-%if %{with bootstrap}
-BuildRequires:    R-quadprog R-boot 
-%else
-BuildRequires:    R-psych R-qgraph R-quadprog R-boot 
+BuildRequires:    R-devel Rmath-devel texlive-collection-latex
+BuildRequires:    R-methods R-stats4 R-stats R-graphics  R-quadprog R-boot
+%if %{without bootstrap}
+BuildRequires:    R-psych R-qgraph
 %endif
 
 %description
