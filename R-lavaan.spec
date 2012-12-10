@@ -1,4 +1,4 @@
-%bcond_with bootstrap
+%bcond_without bootstrap
 %global packname  lavaan
 %global rlibdir  %{_datadir}/R/library
 
@@ -12,15 +12,35 @@ URL:              http://cran.r-project.org/web/packages/%{packname}/index.html
 Source0:          http://cran.r-project.org/src/contrib/%{packname}_0.4-12.tar.gz
 BuildArch:        noarch
 Requires:         R-core
-Requires:         R-methods R-stats4 R-stats R-graphics R-quadprog R-boot
-%if %{without bootstrap}
-Requires:         R-psych R-qgraph
+Requires:         R-methods 
+Requires:         R-stats4
+Requires:         R-stats
+Requires:         R-graphics 
+%if %{with bootstrap}
+Requires:         R-quadprog
+Requires:         R-boot 
+%else
+Requires:         R-psych
+Requires:         R-qgraph
+Requires:         R-quadprog
+Requires:         R-boot 
 %endif
-BuildRequires:    R-devel Rmath-devel texlive-collection-latex
-BuildRequires:    R-methods R-stats4 R-stats R-graphics  R-quadprog R-boot
-%if %{without bootstrap}
-BuildRequires:    R-psych R-qgraph
+BuildRequires:    R-devel
+BuildRequires:    Rmath-devel
+BuildRequires:    texlive-collection-latex
+BuildRequires:    R-methods
+BuildRequires:    R-stats4
+BuildRequires:    R-stats
+BuildRequires:    R-graphics 
+%if %{with bootstrap}
+BuildRequires:    R-quadprog R-boot 
+%else
+BuildRequires:    R-psych
+BuildRequires:    R-qgraph
+BuildRequires:    R-quadprog
+BuildRequires:    R-boot 
 %endif
+BuildRequires:    pkgconfig(lapack)
 
 %description
 Fit a variety of latent variable models, including confirmatory factor
@@ -52,3 +72,15 @@ rm -f %{buildroot}%{rlibdir}/R.css
 %{rlibdir}/%{packname}/R
 %{rlibdir}/%{packname}/data
 %{rlibdir}/%{packname}/help
+
+
+%changelog
+* Wed Feb 22 2012 Paulo Andrade <pcpa@mandriva.com.br> 0.4_12-2
++ Revision: 778904
+- Rebuild with proper dependencies
+
+* Mon Feb 20 2012 Paulo Andrade <pcpa@mandriva.com.br> 0.4_12-1
++ Revision: 777831
+- Import R-lavaan
+- Import R-lavaan
+
