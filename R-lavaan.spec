@@ -4,7 +4,7 @@
 
 Name:             R-%{packname}
 Version:          0.4_12
-Release:          2
+Release:          3
 Summary:          Latent Variable Analysis
 Group:            Sciences/Mathematics
 License:          GPL (>= 2)
