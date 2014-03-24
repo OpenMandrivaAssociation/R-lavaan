@@ -3,13 +3,13 @@
 %global rlibdir  %{_datadir}/R/library
 
 Name:             R-%{packname}
-Version:          0.4_12
-Release:          3
+Version:          0.5.16
+Release:          1
 Summary:          Latent Variable Analysis
 Group:            Sciences/Mathematics
 License:          GPL (>= 2)
 URL:              http://cran.r-project.org/web/packages/%{packname}/index.html
-Source0:          http://cran.r-project.org/src/contrib/%{packname}_0.4-12.tar.gz
+Source0:          http://cran.r-project.org/src/contrib/lavaan_0.5-16.tar.gz
 BuildArch:        noarch
 Requires:         R-core
 Requires:         R-methods 
@@ -83,4 +83,5 @@ rm -f %{buildroot}%{rlibdir}/R.css
 + Revision: 777831
 - Import R-lavaan
 - Import R-lavaan
+
 
