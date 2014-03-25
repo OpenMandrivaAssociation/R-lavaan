@@ -26,6 +26,12 @@ Requires:         R-quadprog
 Requires:         R-boot 
 %endif
 BuildRequires:    R-devel
+BuildRequires: R-lavaan
+Requires: R-lavaan
+BuildRequires: R-pbivnorm
+Requires: R-pbivnorm
+BuildRequires: R-mnormt
+Requires: R-mnormt
 BuildRequires:    Rmath-devel
 BuildRequires:    texlive-collection-latex
 BuildRequires:    R-methods
